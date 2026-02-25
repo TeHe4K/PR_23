@@ -1,3 +1,9 @@
 <Solution>
-  <Project Path="PR23_Konevskii.csproj" Id="149c6267-9b38-42ec-8ed2-1c33820c4067" />
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="PR23_Konevskii.csproj" Id="149c6267-9b38-42ec-8ed2-1c33820c4067">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
 </Solution>

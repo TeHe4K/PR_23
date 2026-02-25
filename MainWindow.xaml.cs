@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PR23_Konevskii.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,15 @@ namespace PR23_Konevskii
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static Connection connect;
+        public static Pages.Main main;
         public MainWindow()
         {
             InitializeComponent();
+            connect = new Connection();
+            connect.LoadData(Connection.tabels.gifts);
+            main = new Pages.Main();
+            frame.Navigate(main);
         }
     }
 }

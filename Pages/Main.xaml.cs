@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PR23_Konevskii.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,23 @@ namespace PR23_Konevskii.Pages
     /// </summary>
     public partial class Main : Page
     {
+        public enum page_main
+        {
+            gifts
+        };
+        public static page_main page_select;
         public Main()
         {
             InitializeComponent();
+            page_select = page_main.gifts;
+            parrent.Children.Clear();
+            MainWindow.connect.LoadData(Classes.Connection.tabels.gifts);
+            foreach(Gift gift_itm in MainWindow.connect.gifts)
+            {
+                parrent.Children.Add(new Elements.Gift_itm(gift_itm)); 
+            }
+            var ff = new Pages.Gift_win(new Gift());
+            parrent.Children.Add(new Elements.add_itm(ff));
         }
     }
 }

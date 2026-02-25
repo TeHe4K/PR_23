@@ -20,9 +20,16 @@ namespace PR23_Konevskii.Elements
     /// </summary>
     public partial class add_itm : UserControl
     {
-        public add_itm()
+        Page page;
+        public add_itm(Page _page)
         {
             InitializeComponent();
+            page = _page;
+        }
+
+        private void Click_add(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PR23_Konevskii.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,38 @@ namespace PR23_Konevskii.Pages
     /// </summary>
     public partial class Gift_win : Page
     {
-        public Gift_win()
+        Classes.Gift gift;
+        public Gift_win(Classes.Gift _gift)
         {
             InitializeComponent();
+            gift = _gift;
+            if (_gift.name != null)
+            {
+                fio_user.Text = _gift.name;
+                text_user.Text = _gift.description;
+                addrec_user.Text = _gift.adress;
+                string[] dateLoc1 = _gift.date.ToString().Split(' ');
+
+                string[] date1 = (dateLoc1[0]).Split('.');
+
+
+                mail_user.Text = _gift.mail;
+            }
+        }
+
+        private void Click_Cancel_User_Redact(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Click_Remove_User_Redact(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Click_User_Redact(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
