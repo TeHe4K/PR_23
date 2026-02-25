@@ -42,12 +42,18 @@ namespace PR23_Konevskii.Pages
 
         private void Click_Cancel_User_Redact(object sender, RoutedEventArgs e)
         {
-
+            MainWindow.main.Move(MainWindow.main.frame_main, null, Main.page_main.gift_win);
         }
 
         private void Click_Remove_User_Redact(object sender, RoutedEventArgs e)
         {
+            MainWindow.connect.LoadData(Classes.Connection.tabels.gifts);
+            string vs = $"DELETE FROM [gifts] WHERE [Код] = " + gift.id.ToString() + "";
+            var pc = MainWindow.connect.QueryAccess(vs);
+            MainWindow.connect.LoadData(Classes.Connection.tabels.gifts);
 
+            MainWindow.main.Load();
+            MainWindow.main.Move(MainWindow.main.frame_main, null, Main.page_main.gift_win);
         }
 
         private void Click_User_Redact(object sender, RoutedEventArgs e)
