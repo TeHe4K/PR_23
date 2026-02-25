@@ -33,7 +33,7 @@ namespace PR23_Konevskii.Elements
                 text_user.Content = _gift.description;
                 addres_user.Content = _gift.adress;
 
-                date_user.Content = _gift.date.ToString();
+                date_user.Content = _gift.date.ToString()+ " " + _gift.Time.ToString();
                 mail_user.Content = _gift.mail;
             }
         }
@@ -47,6 +47,11 @@ namespace PR23_Konevskii.Elements
 
             MainWindow.main.Load();
             MainWindow.main.Move(MainWindow.main.frame_main, null, Main.page_main.gift_win);
+        }
+
+        private void Edit(object sender, RoutedEventArgs e)
+        {
+            MainWindow.main.Move(MainWindow.main.frame_main, new Pages.Gift_win(gift), Main.page_main.gift_win);
         }
     }
 }

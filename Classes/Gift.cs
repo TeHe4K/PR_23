@@ -14,5 +14,6 @@ namespace PR23_Konevskii.Classes
         public string mail { get; set; }
         public string date { get; set; }
         public string description { get; set; }
+        public string Time {  get; set; }
     }
 }

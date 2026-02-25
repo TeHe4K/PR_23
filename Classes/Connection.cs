@@ -50,6 +50,7 @@ namespace PR23_Konevskii.Classes
                     newE1.date = Convert.ToString(itemQuery.GetValue(3));
                     newE1.adress = Convert.ToString(itemQuery.GetValue(4));
                     newE1.mail = Convert.ToString(itemQuery.GetValue(5));
+                    newE1.Time = Convert.ToString(itemQuery.GetValue(6));
 
                     gifts.Add(newE1);
                 }
