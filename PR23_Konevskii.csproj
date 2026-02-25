@@ -71,6 +71,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\Connection.cs" />
+    <Compile Include="Classes\Gift.cs" />
     <Compile Include="Elements\add_itm.xaml.cs">
       <DependentUpon>add_itm.xaml</DependentUpon>
     </Compile>
@@ -122,8 +124,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Classes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
