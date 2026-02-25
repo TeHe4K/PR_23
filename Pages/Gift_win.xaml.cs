@@ -32,9 +32,9 @@ namespace PR23_Konevskii.Pages
                 text_user.Text = _gift.description;
                 addrec_user.Text = _gift.adress;
                 string[] dateLoc1 = _gift.date.ToString().Split(' ');
-
                 string[] date1 = (dateLoc1[0]).Split('.');
-
+                date.SelectedDate = new DateTime(int.Parse(date1[2]), int.Parse(date1[1]), int.Parse(date1[0]));
+                time.Text = dateLoc1[1];
 
                 mail_user.Text = _gift.mail;
             }
@@ -52,7 +52,22 @@ namespace PR23_Konevskii.Pages
 
         private void Click_User_Redact(object sender, RoutedEventArgs e)
         {
-
+            int id = MainWindow.connect.SetLastId(Connection.tabels.gifts);
+            string query = $"INSERT INTO [gifts]([Код],[name],[adress],[mail],[date],[description]) VALUES ({id.ToString()}," +
+                $"'{fio_user.Text}', '{addrec_user.Text}', '{mail_user.Text}','{date.Text}','{text_user.Text}')";
+            var pc = MainWindow.connect.QueryAccess(query);
+            if (pc != null)
+            {
+                MainWindow.connect.LoadData(Classes.Connection.tabels.gifts);
+                MessageBox.Show("Успешное добавление клиента", "Успешное", MessageBoxButton.OK, MessageBoxImage.Information);
+ 
+                MainWindow.main.Load();
+                MainWindow.main.Move(MainWindow.main.frame_main, null, Main.page_main.gift_win);
+            }
+            else
+            {
+                MessageBox.Show("Запрос на добавление клиента не был обработан", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
     }
 }

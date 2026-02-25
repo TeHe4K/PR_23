@@ -30,11 +30,16 @@ namespace PR23_Konevskii.Pages
         {
             InitializeComponent();
             page_select = page_main.none;
-            parrent.Children.Clear();
+            Load();
+        }
+
+        public void Load()
+        {
             MainWindow.connect.LoadData(Classes.Connection.tabels.gifts);
-            foreach(Gift gift_itm in MainWindow.connect.gifts)
+            parrent.Children.Clear();
+            foreach (Gift gift_itm in MainWindow.connect.gifts)
             {
-                parrent.Children.Add(new Elements.Gift_itm(gift_itm)); 
+                parrent.Children.Add(new Elements.Gift_itm(gift_itm));
             }
             var ff = new Pages.Gift_win(new Gift());
             parrent.Children.Add(new Elements.add_itm(ff));

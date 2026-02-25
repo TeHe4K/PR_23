@@ -50,11 +50,36 @@ namespace PR23_Konevskii.Classes
                     newE1.date = Convert.ToString(itemQuery.GetValue(3));
                     newE1.adress = Convert.ToString(itemQuery.GetValue(4));
                     newE1.mail = Convert.ToString(itemQuery.GetValue(5));
+
+                    gifts.Add(newE1);
                 }
             }
             catch
             {
                 Console.WriteLine("NULL");
+            }
+        }
+        public int SetLastId(tabels tabel)
+        {
+            try
+            {
+                LoadData(tabel);
+                switch (tabel.ToString())
+                {
+                    case "gifts":
+                        if (gifts.Count >= 1)
+                        {
+                            int max_status = gifts[0].id;
+                            max_status = gifts.Max(x => x.id);
+                            return max_status + 1;
+                        }
+                        else return -1;
+                }
+                return -1;
+            }
+            catch
+            {
+                return -1;
             }
         }
     }

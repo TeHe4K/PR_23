@@ -31,16 +31,8 @@ namespace PR23_Konevskii.Elements
                 name_user.Content = _gift.name;
                 text_user.Content = _gift.description;
                 addres_user.Content = _gift.adress;
-                string[] dateLoc1 = _gift.date.ToString().Split(' ');
 
-                string[] date1 = (dateLoc1[0]).Split('.');
-
-                System.DateTime date = new DateTime(int.Parse(date1[2]),
-                    int.Parse(date1[1]),
-                    int.Parse(date1[0]),
-                    int.Parse(dateLoc1[1].Split(':')[0]),
-                    int.Parse(dateLoc1[1].Split(':')[1]), 0);
-                date_user.Content = "Продолжительность звонка: " + date.ToString();
+                date_user.Content = _gift.date.ToString();
                 mail_user.Content = _gift.mail;
             }
         }
