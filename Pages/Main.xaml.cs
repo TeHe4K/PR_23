@@ -23,13 +23,13 @@ namespace PR23_Konevskii.Pages
     {
         public enum page_main
         {
-            gifts
+            main, gift_win, none
         };
         public static page_main page_select;
         public Main()
         {
             InitializeComponent();
-            page_select = page_main.gifts;
+            page_select = page_main.none;
             parrent.Children.Clear();
             MainWindow.connect.LoadData(Classes.Connection.tabels.gifts);
             foreach(Gift gift_itm in MainWindow.connect.gifts)
@@ -38,6 +38,11 @@ namespace PR23_Konevskii.Pages
             }
             var ff = new Pages.Gift_win(new Gift());
             parrent.Children.Add(new Elements.add_itm(ff));
+        }
+
+        public void Move(Frame frame_main = null, Page pages = null , page_main page_restart = page_main.none)
+        {
+            frame_main.Navigate(pages);
         }
     }
 }

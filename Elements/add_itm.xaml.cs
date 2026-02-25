@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PR23_Konevskii.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,7 +30,7 @@ namespace PR23_Konevskii.Elements
 
         private void Click_add(object sender, RoutedEventArgs e)
         {
-
+            MainWindow.main.Move(MainWindow.main.frame_main, page);
         }
     }
 }

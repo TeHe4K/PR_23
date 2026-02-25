@@ -12,5 +12,6 @@
         <ScrollViewer x:Name="scroll_main" Margin="10,10" Background="White">
             <StackPanel x:Name="parrent"/>
         </ScrollViewer>
+        <Frame x:Name="frame_main" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Page>

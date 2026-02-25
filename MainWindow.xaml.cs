@@ -23,6 +23,7 @@ namespace PR23_Konevskii
     {
         public static Connection connect;
         public static Pages.Main main;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace PR23_Konevskii
             connect.LoadData(Connection.tabels.gifts);
             main = new Pages.Main();
             frame.Navigate(main);
+
         }
     }
 }
